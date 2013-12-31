@@ -1,6 +1,5 @@
 # To do
 
-* <strike>Make imperial date refresh automatically</strike>
 * Add seconds to clock
 
 
