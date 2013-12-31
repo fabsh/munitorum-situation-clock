@@ -1,3 +1,9 @@
+# To do
+
+* Make imperial date refresh automatically
+* Add seconds to clock
+
+
 # Situation Clock - Imperial style
 
 This version has been modified to display the time in Warhammer 40k Imperial time.
