@@ -88,19 +88,17 @@
 
   <script type="text/javascript" src="imperial-calendar.js"></script>
   <script type="text/javascript">
-                function exampleUsage() {
+            function exampleUsage() {
 
-                        var theGregorianDate = new Date();
-                        var theImperialDate = new ImperialCalendar(theGregorianDate);
+              var theGregorianDate = new Date();
+              var theImperialDate = new ImperialCalendar(theGregorianDate);
 
-            document.getElementById("imp1").innerHTML = theImperialDate.imperialDate(true);
+              document.getElementById("imp1").innerHTML = theImperialDate.imperialDate(true);
 
-            theGregorianDate = new Date(2001, 11, 31);
-            theImperialDate = new ImperialCalendar(theGregorianDate);
-            document.getElementById("greg2").innerHTML = theGregorianDate;
-            document.getElementById("imp2").innerHTML = theImperialDate.imperialDate(true);
+              var heGregorianDate = new Date(2001, 11, 31);
+              var theImperialDate = new ImperialCalendar(theGregorianDate);
 
-            setTimeout(function(){exampleUsage();},500);
+              setTimeout(function(){exampleUsage();},500);
 
             }
   </script>  
