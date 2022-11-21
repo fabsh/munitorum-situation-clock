@@ -50,11 +50,19 @@
       var h=today.getHours();
       var m=today.getMinutes();
       var s=today.getSeconds();
+      // get screen width
+      var width = window.innerWidth;
       // add a zero in front of numbers<10
       h=checkTime(h);
       m=checkTime(m);
       s=checkTime(s);
-      $('.time').html(h+":"+m+":"+s)
+      // hide seconds on small screens
+      if(width < 1100) {
+      $('.time').html(h+":"+m)
+      } else {
+        $('.time').html(h+":"+m+":"+s)
+      }
+      
       t=setTimeout(function(){startTime()},500);
     }
 
