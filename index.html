@@ -15,7 +15,7 @@
       margin: 30px;
       margin-top: 120px;
       font-family:ds_digib;
-      font-size:250px;
+      font-size:210px;
       font-stretch:extra-expanded;
       color: #f00;
       background-color: #211;
@@ -53,7 +53,8 @@
       // add a zero in front of numbers<10
       h=checkTime(h);
       m=checkTime(m);
-      $('.time').html(h+":"+m)
+      s=checkTime(s);
+      $('.time').html(h+":"+m+":"+s)
       t=setTimeout(function(){startTime()},500);
     }
 
@@ -101,13 +102,13 @@
               setTimeout(function(){exampleUsage();},500);
 
             }
-  </script>  
+  </script>
 </head>
 <body onload="startClock(); exampleUsage();">
   <center>
-    <div class="time">19:30</div>
+    <div class="time">21:37:14</div>
     <br/>
-    <div class="imp1"><div id="imp1">0 998 013.M3</div></div>
+    <div class="imp1"><div id="imp1">0 890 022.M3</div></div>
   </center>
 </body>
 </html>
