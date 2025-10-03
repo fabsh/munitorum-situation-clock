@@ -1,10 +1,19 @@
 <!DOCTYPE html>
 <html>
+    
+<!--MUNITORUM SITUATION CLOCK v. 2.0-->
+<!--+++++++++munitorum.net++++++++++-->
+<!--++++++++++++++++++++++++++++++++-->
+<!--Brought to you by fab.industries-->
+    
 <head>
         <meta charset="ISO-8859-1">
+        <title>The Emperor Protects!</title>
 <style type="text/css">
     body {
       background-color:black;
+      width: 100%;
+      height: 100%;
     }
     p {color:blue;}
     @font-face {
@@ -12,8 +21,8 @@
       src: local(ds_digib), url('digital.ttf') format('opentype');
     }
     @font-face {
-      font-family: UnifrakturCook;
-      src: local(UnifrakturCook), url('fraktur.ttf') format('opentype');
+      font-family: PirataOne;
+      src: local(PirataOne), url('pirata.ttf') format('opentype');
     }
      .time {
       margin: 30px;
@@ -38,13 +47,67 @@
     }
       .pro {
       margin: 0px 30px;
-      font-family:UnifrakturCook;
+      font-family:PirataOne;
       font-size:64px;
       color: #98ad24;
       text-align: center;
       padding: 15px 20px;
       padding-top: 30px;
     }
+    
+    .scanlines {
+        overflow: hidden;
+        position: fixed;
+        height: 100%;
+        width: 100%;
+
+    }
+    .scanlines:before,
+    .scanlines:after {
+        display: block;
+        pointer-events: none;
+        content: "";
+        position: absolute;
+    }
+    .scanlines:before {
+        width: 100%;
+        height: 2px;
+        z-index: 2147483649;
+        background: rgba(152, 173, 36, 1);
+        opacity: 0.1;
+        animation: scanline 6s linear infinite;
+    }
+    .scanlines:after {
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 2147483648;
+        background: linear-gradient(
+            to bottom,
+            transparent 50%,
+            rgba(0, 70, 0, 0.4) 51%
+        );
+        background-size: 100% 4px;
+        animation: scanlines 2s steps(60) infinite;
+    }
+    
+    @keyframes scanline {
+        0% {
+            transform: translate3d(0, 200000%, 0);
+        }
+    }
+    @keyframes scanlines {
+        0% {
+            background-position: 0 50%;
+        }
+    }
+    div {
+        margin: 0;
+        padding: 0;
+    }
+
+    
 </style>
   <script>
     function startClock() {
@@ -232,12 +295,10 @@ const values = Object.values(jsonData)
 const randomValue = values[parseInt(Math.random() * values.length)]
 
       $('.pro').html(randomValue);
+      $('.pro').prepend("+++ ");
+      $('.pro').append(" +++");
 
 }
-
-
-
-
 
     var params = {};
     if (location.search) {
@@ -270,12 +331,14 @@ const randomValue = values[parseInt(Math.random() * values.length)]
   </script>
 </head>
 <body onload="startClock(); exampleUsage(); getProverb();">
+  <div class="scanlines">
   <center>
     <div class="time">21:37:14</div>
     <br/>
     <div class="imp1"><div id="imp1">0 890 022.M3</div></div>
     <br />
-    <div class="pro"><div id="pro">Random wisdom.</div></div>
+    <div class="pro"><div id="pro">+++ Random wisdom. +++</div><div>
   </center>
+  </div>
 </body>
 </html>
