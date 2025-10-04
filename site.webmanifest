@@ -1,6 +1,6 @@
 {
-  "name": "MyWebSite",
-  "short_name": "MySite",
+  "name": "Munitorum Situation Clock",
+  "short_name": "Munitorum Clock",
   "icons": [
     {
       "src": "/web-app-manifest-192x192.png",
